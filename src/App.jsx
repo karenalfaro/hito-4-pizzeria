@@ -3,7 +3,8 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 // import RegisterPage from './components/RegisterPage'
 // import LoginPage from './components/LoginPage'
-import Cart from './components/Cart'
+// import Cart from './components/Cart'
+import Pizza from './components/Pizza'
 
 const App = () => {
   return (
@@ -12,7 +13,8 @@ const App = () => {
       {/* <Home /> */}
       {/* <RegisterPage /> */}
       {/* <LoginPage /> */}
-      <Cart />
+      {/* <Cart /> */}
+      <Pizza />
       <Footer />
     </>
   )

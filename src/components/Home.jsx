@@ -1,8 +1,22 @@
+import { useState, useEffect } from 'react'
 import Header from './Header'
 import CardPizza from './CardPizza'
-import { pizzas } from '../pizzas'
+import { imagenesPizzas } from '../utils/imagenesPizzas'
 
 const Home = () => {
+  const [pizzas, setPizzas] = useState([])
+
+  useEffect(() => {
+    consultarApi()
+  }, [])
+
+  const consultarApi = async () => {
+    const url = 'http://localhost:5000/api/pizzas'
+    const response = await fetch(url)
+    const data = await response.json()
+    setPizzas(data)
+  }
+
   return (
     <>
       <Header />
@@ -15,7 +29,7 @@ const Home = () => {
                 name={pizza.name}
                 price={pizza.price}
                 ingredients={pizza.ingredients}
-                img={pizza.img}
+                img={imagenesPizzas[pizza.id]}
               />
             </div>
           ))}
